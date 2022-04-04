@@ -1,7 +1,8 @@
-package proxy;
+package proxy.logger;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.List;
 
 public class LoggedSQL implements DataBaseQuery {
 
@@ -13,7 +14,7 @@ public class LoggedSQL implements DataBaseQuery {
 
 
     @Override
-    public ResultSet select(String query) throws SQLException {
+    public List<HashMap<String, String>> select(String query) throws SQLException {
         System.out.println("Execute select query: " + query);
         return sql.select(query);
     }
