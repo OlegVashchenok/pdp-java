@@ -7,17 +7,17 @@ public class Message {
     private String uuid;
     private String value;
 
+    public Message(String value) {
+        this.uuid = getRandomName();
+        this.value = value;
+    }
+
     public String getUuid() {
         return uuid;
     }
 
     public String getValue() {
         return value;
-    }
-
-    public Message(String value) {
-        this.uuid = getRandomName();
-        this.value = value;
     }
 
     private String getRandomName() {
