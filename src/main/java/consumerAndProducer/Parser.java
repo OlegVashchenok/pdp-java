@@ -1,4 +1,4 @@
-package facade;
+package consumerAndProducer;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

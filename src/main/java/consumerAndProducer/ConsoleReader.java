@@ -1,4 +1,4 @@
-package facade;
+package consumerAndProducer;
 
 import java.util.ArrayList;
 import java.util.Arrays;
