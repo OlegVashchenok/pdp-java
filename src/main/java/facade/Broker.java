@@ -1,24 +1,19 @@
 package facade;
 
-import java.util.ArrayDeque;
-import java.util.Queue;
+import java.util.concurrent.LinkedBlockingDeque;
 
 public class Broker {
 
-    Queue<Message> messagesQueue = new ArrayDeque<>();
+    LinkedBlockingDeque<Message> messagesQueue = new LinkedBlockingDeque<>();
 
     public Broker() {
     }
 
-    public Queue<Message> getMessagesQueue() {
+    public LinkedBlockingDeque<Message> getMessagesQueue() {
         return messagesQueue;
     }
 
     public void addToQueue(Message message) {
         messagesQueue.add(message);
-    }
-
-    public int isQueueEmpty() {
-        return messagesQueue.size();
     }
 }

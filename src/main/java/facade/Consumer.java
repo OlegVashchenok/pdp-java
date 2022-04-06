@@ -1,19 +1,21 @@
 package facade;
 
 
+import java.util.concurrent.LinkedBlockingDeque;
+
 public class Consumer implements Runnable {
 
-    private Producer prod;
+    LinkedBlockingDeque<Message> messagesQueue;
 
-    public Consumer(Producer prod) {
-        this.prod = prod;
+    public Consumer(LinkedBlockingDeque<Message> messagesQueue) {
+        this.messagesQueue = messagesQueue;
     }
 
     @Override
     public void run() {
         while (true) {
-            if (prod.getBroker().isQueueEmpty() == 0) return;
-            var message = prod.getBroker().getMessagesQueue().remove();
+            if (messagesQueue.isEmpty()) return;
+            var message = messagesQueue.poll();
             new DocumentWriter().write(message.getUuid(), new Parser().getDocument(message.getValue()));
         }
     }

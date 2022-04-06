@@ -1,11 +1,32 @@
 package facade;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         var messageList = new ConsoleReader().getMessageList();
         Producer prod = new Producer(messageList);
-        Consumer consumer = new Consumer(prod);
-        consumer.run();
+        var broker = prod.getBroker();
+        long time = System.currentTimeMillis();
+        someMethod(broker, 10);
+        System.out.println(System.currentTimeMillis() - time);
+    }
 
+    public static void someMethod(Broker broker, int count) {
+        List<Thread> threads = new ArrayList<>();
+        try {
+            for (int i = 0; i <= count; i++) {
+                var thread = new Thread(new Consumer(broker.getMessagesQueue()));
+                thread.setDaemon(true);
+                thread.start();
+                threads.add(thread);
+            }
+            for (Thread thread : threads) {
+                thread.join();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
