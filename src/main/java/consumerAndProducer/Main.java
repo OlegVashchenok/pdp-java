@@ -9,11 +9,11 @@ public class Main {
         Producer prod = new Producer(messageList);
         var broker = prod.getBroker();
         long time = System.currentTimeMillis();
-        someMethod(broker, 10);
+        parseParallel(broker, 10);
         System.out.println(System.currentTimeMillis() - time);
     }
 
-    public static void someMethod(Broker broker, int count) {
+    public static void parseParallel(Broker broker, int count) {
         List<Thread> threads = new ArrayList<>();
         try {
             for (int i = 0; i <= count; i++) {
