@@ -1,4 +1,4 @@
-package consumerAndProducer;
+package facade;
 
 import java.util.List;
 

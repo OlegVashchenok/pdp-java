@@ -1,5 +1,9 @@
-package consumerAndProducer;
+package facade.consumerProducer;
 
+
+import facade.Message;
+import facade.Parser;
+import facade.writer.DocumentWriter;
 
 import java.util.concurrent.LinkedBlockingDeque;
 

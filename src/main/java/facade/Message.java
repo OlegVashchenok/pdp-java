@@ -1,4 +1,4 @@
-package consumerAndProducer;
+package facade;
 
 
 import org.apache.commons.lang3.RandomStringUtils;

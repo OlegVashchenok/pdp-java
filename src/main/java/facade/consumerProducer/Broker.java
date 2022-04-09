@@ -1,4 +1,6 @@
-package consumerAndProducer;
+package facade.consumerProducer;
+
+import facade.Message;
 
 import java.util.concurrent.LinkedBlockingDeque;
 
