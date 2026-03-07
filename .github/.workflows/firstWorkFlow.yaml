@@ -1,0 +1,11 @@
+name: firstTestWorkflow
+on: [push]
+
+jobs:
+  run_first_comant:
+    runs-on: ubuntu-latest
+    steps:
+      - name: java version
+        run: java -version
+      - name: mvn version
+        run: mvn -version
