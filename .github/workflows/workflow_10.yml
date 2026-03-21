@@ -7,8 +7,11 @@ jobs:
     step_1:
         runs-on: ubuntu-latest
         steps:
-        - name: Context
+        - name: Context github
           run: |
             echo '${{toJson(github)}}'
-            echo '${{toJson(runner)}}'
             echo '${{toJson(steps)}}'
+        - name: Context runner
+          run:   echo '${{toJson(runner)}}'
+        - name: Context job
+          run: echo '${{toJson(job)}}'
