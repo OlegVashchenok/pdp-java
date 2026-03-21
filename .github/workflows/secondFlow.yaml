@@ -11,7 +11,7 @@ on:
 
 jobs:
     run-comand:
-        runs-on: ununtu-latest
+        runs-on: ubuntu-latest
         steps:
         - name: Output from title
           run: echo "Title ${{ inputs.title-custom}}"
