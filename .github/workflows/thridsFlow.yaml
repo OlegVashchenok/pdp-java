@@ -1,0 +1,14 @@
+name: test shcedule
+on: 
+    schedule:
+        - cron: "0 8 * * 6" 
+        # зірочка це, означає кожну, хвилину, годину, день місяця, мяцяць, день тижня. але гарантій нема. що він запуститьмя точго в цей час
+
+jobs: 
+  run-first-comand:
+    runs-on: ununtu-latest
+    steps:
+    - name: Event varisables
+      run: |
+        echo $GITHUB_SHA
+        echo $GITHUB_FEF

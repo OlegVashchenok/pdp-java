@@ -1,10 +1,18 @@
 name: secondFlow
 
-on: workflow_dispatch  
+on: 
+  workflow_dispatch:
+    inputs:
+      title-custom:
+        description: Type the title
+        type: string
+        required: true
+        default: "Hello world"
+
 jobs:
     run-comand:
         runs-on: ununtu-latest
         steps:
-        - name: first_comand
-          run: pwd
+        - name: Output from title
+          run: echo "Title ${{ inputs.title-custom}}"
 
