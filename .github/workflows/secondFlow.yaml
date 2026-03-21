@@ -10,9 +10,7 @@ on:
         default: "Hello world"
 
 jobs:
-    run-comand:
-        runs-on: ubuntu-latest
-        steps:
-        - name: Output from title
-          run: echo "Title ${{ inputs.title-custom}}"
-
+  run-comand:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Title ${{ inputs.title-custom}}"
