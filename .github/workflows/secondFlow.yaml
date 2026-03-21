@@ -1,0 +1,12 @@
+name: secondFlow
+
+on: 
+    workflow_dispatch  
+
+jobs:
+    run-comand:
+        runs-on: ununtu-latest
+        steps:
+        - name: first_comand
+          run: pwd 
+          
