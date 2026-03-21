@@ -1,7 +1,7 @@
 name: secondFlow
 
 on: 
-  workflow_dispatch:
+  workflow_dispatch: # ще є repository_dispatch це суто для запуску без кнопки, він працює з types: [test] і в post запиті потрібні буде передавати цей event_type: "test"
     inputs:
       title-custom:
         description: Type the title

@@ -1,0 +1,14 @@
+name: workflow 10 # виразі в github, context
+
+on: 
+    workflow_dispatch:
+
+jobs: 
+    step_1:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Context
+          run: |
+            echo ${{toJson(github)}}
+            echo ${{toJson(runner)}}
+            echo ${{toJson(steps)}}
