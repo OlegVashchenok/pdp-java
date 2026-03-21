@@ -10,8 +10,9 @@ jobs:
         - name: Context github
           run: |
             echo '${{toJson(github)}}'
-            echo '${{toJson(steps)}}'
         - name: Context runner
-          run:   echo '${{toJson(runner)}}'
+          run:  |
+                echo '${{toJson(runner)}}'
+                echo '${{toJson(steps)}}'
         - name: Context job
           run: echo '${{toJson(job)}}'
