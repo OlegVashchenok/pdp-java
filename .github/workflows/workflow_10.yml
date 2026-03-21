@@ -9,6 +9,6 @@ jobs:
         steps:
         - name: Context
           run: |
-            echo ${{toJson(github)}}
-            echo ${{toJson(runner)}}
-            echo ${{toJson(steps)}}
+            echo '${{toJson(github)}}'
+            echo '${{toJson(runner)}}'
+            echo '${{toJson(steps)}}'
