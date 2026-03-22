@@ -1,0 +1,19 @@
+name: Third Workflow
+on: 
+  workflow_dispatch
+
+jobs:
+  run-first-command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List Files
+        run: lsfgf -a
+      - uses: actions/checkout@v6
+      - name: List Files
+        run: ls -
+
+
+          # https://github.com/actions/checkout
+          # Розповісти про те що, за замовчуванням файлів, репозиторію нема на ранері. 
+          # https://github.com/marketplace?type=actions
+          # - action це скріпки розроблені іншими розробникамм для вирішення типових задач.
