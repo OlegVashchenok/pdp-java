@@ -10,7 +10,7 @@ jobs:
         run: ls -a
       - uses: actions/checkout@v6
       - name: List Files
-        run: ls -
+        run: ls 
 
 
           # https://github.com/actions/checkout
