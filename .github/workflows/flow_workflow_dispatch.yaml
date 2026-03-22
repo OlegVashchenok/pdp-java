@@ -1,4 +1,4 @@
-name: secondFlow
+name: dispatch
 
 on: 
   workflow_dispatch: # ще є repository_dispatch це суто для запуску без кнопки, він працює з types: [test] і в post запиті потрібні буде передавати цей event_type: "test"
@@ -8,6 +8,17 @@ on:
         type: string
         required: true
         default: "Hello world"
+      environment:
+        description: 'Target environment'
+        type: choice
+        options:
+          - stage
+          - prod
+      verbose:
+        description: 'Enable verbose output'
+        type: boolean
+        default: false
+
 
 jobs:
   run-comand:
