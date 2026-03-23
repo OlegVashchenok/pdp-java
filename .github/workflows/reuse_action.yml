@@ -4,8 +4,7 @@ on: [push]
 
 jobs:
   run_first_step:
-    runs-on:
-      ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       uses: ./.github/actions/java_version
       with:
