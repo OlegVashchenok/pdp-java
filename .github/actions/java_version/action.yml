@@ -10,6 +10,6 @@ inputs:
 runs:
   using: 'composite'  # ще є docker, node-16
   steps:
-   - name: echo echo java version
-  run: echo "Java version is ${{ inputs.java-version }}"
-  shell: bash
+    - name: echo echo java version
+      run: echo "Java version is ${{ inputs.java-version }}"
+      shell: bash
