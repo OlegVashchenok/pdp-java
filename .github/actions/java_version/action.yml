@@ -10,7 +10,7 @@ inputs:
 outputs:
   maven-version:
     description: 'The version of Maven used in the workflow'
-
+    value: ${{ steps.maven_step.outputs.maven-version }}
 
 runs:
   using: 'composite'  # ще є docker, node-16

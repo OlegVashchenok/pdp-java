@@ -13,5 +13,5 @@ jobs:
         with:
           java-version: 21
       - name: Use Maven Version Output
-        run: echo "Maven version is ${{ steps.maven_step.outputs.maven-version }}"
+        run: echo "Maven version is ${{ steps.get_java_version.outputs.maven-version }}"
 
