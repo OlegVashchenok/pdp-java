@@ -6,6 +6,10 @@ jobs:
   run_first_step:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+
       - name: Reuse Java Version Action
         uses: ./.github/actions/java_version
         with:
