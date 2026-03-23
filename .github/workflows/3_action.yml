@@ -14,7 +14,7 @@ jobs:
       - name: run java
         run: | 
             cd src/main/java/fibonacci
-            java FibonacciNumbers
+            java FibonacciNumbers.java
 
           # https://github.com/actions/checkout
           # Розповісти про те що, за замовчуванням файлів, репозиторію нема на ранері. 
