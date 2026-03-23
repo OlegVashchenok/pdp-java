@@ -6,6 +6,7 @@ jobs:
   run_first_step:
     runs-on: ubuntu-latest
     steps:
-      uses: ./.github/actions/java_version
-      with:
-        java-version: 21
+      - name: Reuse Java Version Action
+        uses: ./.github/actions/java_version
+        with:
+          java-version: 21
