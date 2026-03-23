@@ -10,7 +10,11 @@ jobs:
         run: ls -a
       - uses: actions/checkout@v6
       - name: List Files
-        run: ls 
+        run: ls
+      - name: run java
+        run: | 
+            cd src/main/java/fibonacci
+            java FibonacciNumbers
 
           # https://github.com/actions/checkout
           # Розповісти про те що, за замовчуванням файлів, репозиторію нема на ранері. 
