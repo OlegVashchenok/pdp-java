@@ -2,7 +2,7 @@ name: dispatch
 
 on: 
   workflow_dispatch: # ще є repository_dispatch це суто для запуску без кнопки, він працює з types: [test] і в post запиті потрібні буде передавати цей event_type: "test"
-    inputs:
+   inputs:
       title-custom:
         description: Type the title
         type: string
@@ -19,9 +19,9 @@ on:
         type: boolean
         default: false
 
-
 jobs:
   run-comand:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Title ${{ inputs.title-custom}}"
+  
