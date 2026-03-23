@@ -1,0 +1,16 @@
+name: echo java version
+description: Echo java version
+
+inputs:
+  java-version:
+    description: 'Java version to use'
+    required: true
+    default: '17'
+
+runs:
+  using: 'composite'  # ще є docker, node-16
+
+  steps:
+    - name: echo echo java version
+      run: echo "Java version is ${{ inputs.java-version }}"
+      shell: bash

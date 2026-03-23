@@ -1,0 +1,12 @@
+name: reuse action
+
+on: [push]
+
+jobs:
+  run_first_step:
+    runs-on:
+      ubuntu-latest
+    steps:
+      uses: ./.github/action/java_version
+      with:
+        java-version: 21
