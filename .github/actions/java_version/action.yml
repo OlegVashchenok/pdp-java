@@ -7,9 +7,21 @@ inputs:
     required: true
     default: '17'
 
+outputs:
+  maven-version:
+    description: 'The version of Maven used in the workflow'
+
+
 runs:
   using: 'composite'  # ще є docker, node-16
   steps:
     - name: echo echo java version
-      run: echo "Java version is ${{ inputs.java-version }}"
+      run:  | 
+        echo "Java version is ${{ inputs.java-version }}"
+        maven_version=$(mvn -v | grep "Apache Maven" | awk '{print $3}')
       shell: bash
+
+
+      # outputs призначені для передачі даних між кроками в рамках одного workflow.
+      # В даному випадку, якщо потрібно передати якусь інформацію про версію Java або інші дані, можна встановити
+      # значення в outputs і використовувати його в наступних кроках.

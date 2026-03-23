@@ -6,7 +6,12 @@ jobs:
   run_first_step:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Reuse Java Version Action
+        id: get_java_version
         uses: ./.github/actions/java_version
         with:
           java-version: 21
+      - name: Use Maven Version Output
+        run: echo "Maven version is ${{ steps.get_java_version.outputs.maven-version }}
+
