@@ -18,7 +18,8 @@ runs:
     - name: echo echo java version
       run:  | 
         echo "Java version is ${{ inputs.java-version }}"
-        maven_version=$(mvn -v | grep "Apache Maven" | awk '{print $3}')
+        maven_version=$(mvn -v | head -1)
+        echo "maven-version=$maven_version" >> $GITHUB_OUTPUT
       shell: bash
 
 
